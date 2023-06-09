@@ -6,6 +6,9 @@ class Kernel:
     def register_plugin(self, name, plugin):
         self.plugins[name] = plugin
 
+    def unregister_plugin(self, name):
+        del self.plugins[name]
+
     def run(self):
         for name, plugin in self.plugins.items():
             print(f"Running plugin: {name}")
